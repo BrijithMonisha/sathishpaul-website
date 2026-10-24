@@ -1,0 +1,336 @@
+.catholic-designs-page {
+  min-height: 100vh;
+  background: white;
+  padding-top: 76px;
+  overflow-x: clip;
+}
+
+.page-content {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.content-area {
+  flex: 1;
+  min-width: 0;
+  padding: 2rem;
+  position: relative;
+  min-height: calc(100vh - 80px);
+  background: white;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.gallery-card {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInScale 0.6s ease-out forwards;
+  border: 1px solid #e0e0e0;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent);
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-info {
+  color: white;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.gospel-loader {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+
+.loading-message,
+.no-data-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.gallery-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin-top: 1.25rem;
+  padding: 0.85rem 0 0.25rem;
+  border-top: 1px solid #ececec;
+}
+
+.gallery-pagination-summary {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: #8a8a8a;
+  font-weight: 400;
+}
+
+.gallery-pagination-summary strong {
+  color: #222;
+  font-weight: 700;
+}
+
+.gallery-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.gallery-pagination-link {
+  border: 0;
+  background: transparent;
+  padding: 0.2rem 0.35rem;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.gallery-pagination-link:not(:disabled):hover {
+  color: #111;
+}
+
+.gallery-pagination-link:disabled {
+  color: #cfcfcf;
+  cursor: not-allowed;
+}
+
+.gallery-pagination-page {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffa72c;
+  color: #111;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.content-area--paginated {
+  padding-bottom: 2rem;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .content-area {
+    padding: 1.25rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .category-sidebar {
+    flex-basis: 170px;
+    width: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catholic-designs-page {
+    padding-top: 78px;
+  }
+
+  .page-content {
+    flex-direction: column;
+  }
+
+  .content-area {
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+  }
+
+  .gallery-card {
+    border-radius: 6px;
+  }
+
+  .card-overlay {
+    padding: 1rem;
+    opacity: 1; /* Always visible on mobile */
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+  }
+
+  .loading-message,
+  .no-data-message {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+  }
+
+  .content-area--paginated {
+    padding-bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .content-area--paginated .gallery-pagination {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 900;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0.5rem 3.15rem 0.5rem 0.65rem;
+    padding-bottom: calc(0.55rem + env(safe-area-inset-bottom, 0px));
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #eee;
+  }
+
+  .content-area--paginated .gallery-pagination-summary {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.68rem;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .content-area--paginated .gallery-pagination-controls {
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .content-area--paginated .gallery-pagination-link {
+    font-size: 0.78rem;
+    min-height: 32px;
+    padding-inline: 0.2rem;
+  }
+
+  .content-area--paginated .gallery-pagination-page {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .catholic-designs-page {
+    padding-top: 78px;
+  }
+
+  .content-area {
+    padding: 0.75rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .gallery-card img {
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .card-overlay {
+    padding: 0.75rem;
+  }
+
+  .card-title {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .loading-message,
+  .no-data-message {
+    padding: 1.5rem 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .content-area--paginated .gallery-pagination {
+    padding-left: 0.5rem;
+    padding-right: 2.85rem;
+  }
+
+  .content-area--paginated .gallery-pagination-summary {
+    font-size: 0.62rem;
+  }
+
+  .content-area--paginated .gallery-pagination-link {
+    font-size: 0.72rem;
+  }
+
+  .content-area--paginated .gallery-pagination-page {
+    width: 1.65rem;
+    height: 1.65rem;
+    font-size: 0.72rem;
+  }
+}

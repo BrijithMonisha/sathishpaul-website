@@ -1,0 +1,256 @@
+.search-page {
+  max-width: 1200px;
+  width: 100%;
+  margin: 76px auto 2rem;
+  padding: 2rem 1rem;
+  font-family: Century Gothic, sans-serif;
+  overflow-x: clip;
+}
+
+.search-header {
+  margin-bottom: 1rem;
+}
+
+.search-title {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem;
+}
+
+.search-subtitle {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.search-query {
+  font-weight: 600;
+  color: #f28d01;
+}
+
+.search-status {
+  margin-top: 2rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.search-empty {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.search-empty-image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+.search-empty-text {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.search-card {
+  background: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-card-button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.search-card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Lightbox */
+.search-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: search-lightbox-fadeIn 0.2s ease;
+}
+
+@keyframes search-lightbox-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.search-lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2001;
+  transition: background 0.2s ease;
+}
+
+.search-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.search-lightbox-prev,
+.search-lightbox-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2001;
+  transition: background 0.2s ease;
+}
+
+.search-lightbox-prev {
+  left: 1rem;
+}
+
+.search-lightbox-next {
+  right: 1rem;
+}
+
+.search-lightbox-prev:hover,
+.search-lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.search-lightbox-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-lightbox-image {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+.search-lightbox-caption {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+.search-card-image-wrapper {
+  width: 100%;
+  padding-top: 115%;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-card-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .search-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .search-page {
+    margin-top: 78px;
+    padding: 1.5rem 0.85rem 3rem;
+  }
+
+  .search-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .search-lightbox-overlay {
+    padding: 0.75rem;
+  }
+
+  .search-lightbox-prev,
+  .search-lightbox-next {
+    width: 38px;
+    height: 38px;
+  }
+
+  .search-lightbox-prev {
+    left: 0.35rem;
+  }
+
+  .search-lightbox-next {
+    right: 0.35rem;
+  }
+
+  .search-lightbox-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 38px;
+    height: 38px;
+  }
+
+  .search-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+}
+
