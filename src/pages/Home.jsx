@@ -24,7 +24,7 @@ const categories = [
   { title: 'Gospeltoons English New', image: '/images/gt eng.png', to: '/gospeltoons-eng-new' },
   { title: 'Gospeltoons Tamil New', image: '/images/gt tam.png', to: '/gospeltoons-tamil-new' },
   { title: 'Catholic Designs', image: '/images/Logo 3.png', to: '/catholic-designs' },
-  { title: 'Strokes', image: '/images/Strokes.png', to: '/strokes' },
+  { title: 'Strokes', image: '/images/Strokes.png', href: 'https://www.instagram.com/strokes.sp/' },
   { title: 'Gospeltoons English', image: '/images/Logo 1.png', to: '/gospeltoons-eng' },
   { title: 'Gospeltoons Tamil', image: '/images/Logo 2.png', to: '/gospeltoons-tamil' },
 ]
@@ -32,11 +32,11 @@ const categories = [
 const downloads = [
   {
     title: 'Gospeltoons English New',
-    href: '/gospeltoons-eng-new',
+    href: 'https://drive.google.com/drive/folders/1rumRcWdOAmJWevY5LGNrdFZrdMev2KD0',
   },
   {
     title: 'Gospeltoons Tamil New',
-    href: '/gospeltoons-tamil-new',
+    href: 'https://drive.google.com/drive/folders/1lhOiiefHARkClTJA3OVhgza2OZvz_Fwe',
   },
 ]
 
@@ -179,15 +179,37 @@ const Home = () => {
 
       <section className="home-content" id="categories">
         <div className="category-grid">
-          {categories.map((category) => (
-            <Link className="category-card" to={category.to} key={category.title}>
-              <img src={category.image} alt={`${category.title} logo`} />
-              <div className="category-card-footer">
-                <span>{category.title}</span>
-                <span className="card-arrow" aria-hidden="true">-&gt;</span>
-              </div>
-            </Link>
-          ))}
+          {categories.map((category) => {
+            const cardContent = (
+              <>
+                <img src={category.image} alt={`${category.title} logo`} />
+                <div className="category-card-footer">
+                  <span>{category.title}</span>
+                  <span className="card-arrow" aria-hidden="true">-&gt;</span>
+                </div>
+              </>
+            )
+
+            if (category.href) {
+              return (
+                <a
+                  className="category-card"
+                  href={category.href}
+                  key={category.title}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {cardContent}
+                </a>
+              )
+            }
+
+            return (
+              <Link className="category-card" to={category.to} key={category.title}>
+                {cardContent}
+              </Link>
+            )
+          })}
         </div>
 
         <section className="download-panel">
@@ -202,12 +224,17 @@ const Home = () => {
           </div>
           <div className="download-list">
             {downloads.map((download) => (
-              <Link to={download.href} key={download.title}>
+              <a
+                href={download.href}
+                key={download.title}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 15v5h14v-5" />
                 </svg>
                 {download.title}
-              </Link>
+              </a>
             ))}
           </div>
         </section>

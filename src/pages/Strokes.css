@@ -72,16 +72,31 @@
 }
 
 .gallery-pagination-page {
-  width: 2rem;
-  height: 2rem;
+  width: 1.35rem;
+  height: 1.35rem;
   display: grid;
   place-items: center;
+  border: 0;
   border-radius: 50%;
-  background: #ffa72c;
-  color: #111;
-  font-size: 0.88rem;
+  background: transparent;
+  color: #666;
+  font: inherit;
+  font-size: 0.65rem;
   font-weight: 700;
   line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.gallery-pagination-page:hover {
+  color: #111;
+  background: #ffe0a8;
+}
+
+.gallery-pagination-page.is-active {
+  background: #ffa72c;
+  color: #111;
+  cursor: default;
 }
 
 .strokes-message {
@@ -215,9 +230,9 @@
   }
 
   .strokes-page--paginated .gallery-pagination-page {
-    width: 1.75rem;
-    height: 1.75rem;
-    font-size: 0.78rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 0.6rem;
   }
 }
 
@@ -240,8 +255,8 @@
   }
 
   .strokes-page--paginated .gallery-pagination-page {
-    width: 1.65rem;
-    height: 1.65rem;
-    font-size: 0.72rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 0.58rem;
   }
 }

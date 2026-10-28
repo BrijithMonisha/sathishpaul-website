@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 36px;
+  gap: 18px;
 }
 
 .logo-section {
@@ -41,7 +41,7 @@
 .desktop-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 8px;
 }
 
@@ -53,7 +53,6 @@
   font-size: 0.78rem;
   white-space: nowrap;
   transition: background 0.2s ease, color 0.2s ease;
-
 }
 
 .nav-link:hover,
@@ -69,8 +68,8 @@
 }
 
 .search-toggle {
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
   display: grid;
   place-items: center;
   border: 0;
@@ -78,6 +77,7 @@
   background: #ffa72c;
   color: #111;
   cursor: pointer;
+  font-size: 0.78rem;
 }
 
 .header-search {
@@ -186,8 +186,9 @@
   }
 
   .search-toggle {
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 28px;
+    font-size: 0.72rem;
   }
 }
 
@@ -329,9 +330,10 @@
   }
 
   .search-toggle {
-    width: 34px;
-    height: 34px;
-    flex: 0 0 34px;
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    font-size: 0.72rem;
   }
 
   .nav-toggle {
@@ -344,7 +346,7 @@
   .header-container { padding-inline: 12px; }
   .logo-text { font-size: 0.92rem; }
   .header-actions { gap: 10px; }
-  .search-toggle { width: 36px; height: 36px; }
+  .search-toggle { width: 28px; height: 28px; font-size: 0.72rem; }
 }
 
 @media (max-width: 360px) {
@@ -361,7 +363,8 @@
   }
 
   .search-toggle {
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 28px;
+    font-size: 0.72rem;
   }
 }

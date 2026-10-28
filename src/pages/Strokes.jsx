@@ -128,6 +128,19 @@ const Strokes = () => {
   const showingFrom = strokeImages.length ? pageStartIndex + 1 : 0
   const showingTo = pageStartIndex + visibleImages.length
 
+  const maxVisiblePages = 5
+  const pageWindowStart =
+    totalPages <= maxVisiblePages
+      ? 1
+      : Math.min(
+          Math.max(1, safePage - Math.floor(maxVisiblePages / 2)),
+          totalPages - maxVisiblePages + 1
+        )
+  const visiblePageNumbers = Array.from(
+    { length: Math.min(maxVisiblePages, totalPages) },
+    (_, index) => pageWindowStart + index
+  )
+
   const paginationNav = isPaginated && !isLoading && !error && (
     <nav className="gallery-pagination" aria-label="Strokes gallery pages">
       <p className="gallery-pagination-summary">
@@ -144,9 +157,18 @@ const Strokes = () => {
         >
           Prev
         </button>
-        <span className="gallery-pagination-page" aria-current="page">
-          {safePage}
-        </span>
+        {visiblePageNumbers.map((pageNumber) => (
+          <button
+            type="button"
+            key={pageNumber}
+            className={`gallery-pagination-page${pageNumber === safePage ? ' is-active' : ''}`}
+            onClick={() => goToPage(pageNumber)}
+            aria-label={`Page ${pageNumber}`}
+            aria-current={pageNumber === safePage ? 'page' : undefined}
+          >
+            {pageNumber}
+          </button>
+        ))}
         <button
           type="button"
           className="gallery-pagination-link"

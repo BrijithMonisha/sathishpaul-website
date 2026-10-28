@@ -576,6 +576,30 @@ const imageSeoData = [
     "keywords": "Catholic Designs Scripture (52), Bible verse image, scripture art"
   },
   {
+    "slug": "catholic-designs-scripture-53",
+    "title": "Catholic Designs Scripture (53)",
+    "verseText": "Catholic Designs Scripture (53)",
+    "reference": "",
+    "shortReference": "",
+    "image": "/images/web/scripture/Catholic Designs Scripture (53).jpeg",
+    "alt": "Catholic Designs Scripture (53)",
+    "description": "Catholic Designs Scripture (53) scripture image with Bible verse text.",
+    "caption": "Catholic Designs Scripture (53)",
+    "keywords": "Catholic Designs Scripture (53), Bible verse image, scripture art"
+  },
+  {
+    "slug": "catholic-designs-scripture-54",
+    "title": "Catholic Designs Scripture (54)",
+    "verseText": "Catholic Designs Scripture (54)",
+    "reference": "",
+    "shortReference": "",
+    "image": "/images/web/scripture/Catholic Designs Scripture (54).jpeg",
+    "alt": "Catholic Designs Scripture (54)",
+    "description": "Catholic Designs Scripture (54) scripture image with Bible verse text.",
+    "caption": "Catholic Designs Scripture (54)",
+    "keywords": "Catholic Designs Scripture (54), Bible verse image, scripture art"
+  },
+  {
     "slug": "catholic-designs-scripture-6",
     "title": "Catholic Designs Scripture (6)",
     "verseText": "Catholic Designs Scripture (6)",

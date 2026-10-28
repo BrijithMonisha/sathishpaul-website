@@ -2,12 +2,14 @@ import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './Header.css'
 
+const STROKES_INSTAGRAM = 'https://www.instagram.com/strokes.sp/'
+
 const links = [
   { label: 'Home', to: '/' },
   { label: 'Gt English New', to: '/gospeltoons-eng-new' },
   { label: 'Gt Tamil New', to: '/gospeltoons-tamil-new' },
   { label: 'Catholic Designs', to: '/catholic-designs' },
-  { label: 'Strokes', to: '/strokes' },
+  { label: 'Strokes', href: STROKES_INSTAGRAM },
   { label: 'Gt English', to: '/gospeltoons-eng' },
   { label: 'Gt Tamil', to: '/gospeltoons-tamil' },
 ]
@@ -40,11 +42,23 @@ const Header = () => {
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
-          {links.map((link) => (
-            <Link className={`nav-link ${isActive(link.to) ? 'active' : ''}`} to={link.to} key={link.to}>
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) =>
+            link.href ? (
+              <a
+                className="nav-link"
+                href={link.href}
+                key={link.label}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link className={`nav-link ${isActive(link.to) ? 'active' : ''}`} to={link.to} key={link.to}>
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <div className="header-actions">
@@ -79,16 +93,29 @@ const Header = () => {
           <strong>Sathish Paul SDB</strong>
           <button onClick={() => setMobileMenuOpen(false)} aria-label="Close navigation">X</button>
         </div>
-        {links.map((link) => (
-          <Link
-            className={`mobile-nav-link ${isActive(link.to) ? 'active' : ''}`}
-            to={link.to}
-            key={link.to}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            {link.label}<span aria-hidden="true">-&gt;</span>
-          </Link>
-        ))}
+        {links.map((link) =>
+          link.href ? (
+            <a
+              className="mobile-nav-link"
+              href={link.href}
+              key={link.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link.label}<span aria-hidden="true">-&gt;</span>
+            </a>
+          ) : (
+            <Link
+              className={`mobile-nav-link ${isActive(link.to) ? 'active' : ''}`}
+              to={link.to}
+              key={link.to}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link.label}<span aria-hidden="true">-&gt;</span>
+            </Link>
+          )
+        )}
       </nav>
     </header>
   )

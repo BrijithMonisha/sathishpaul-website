@@ -999,6 +999,11 @@
       "id": "catholic-designs/common/CDtwo 148 copy.jpg",
       "name": "CDtwo 148 copy.jpg",
       "src": "/website-sp/catholic-designs/common/CDtwo%20148%20copy.jpg"
+    },
+    {
+      "id": "catholic-designs/common/Catholic Designs common (196).jpeg",
+      "name": "Catholic Designs common (196).jpeg",
+      "src": "/website-sp/catholic-designs/common/Catholic%20Designs%20common%20(196).jpeg"
     }
   ],
   "jesus": [
@@ -1716,6 +1721,11 @@
       "id": "catholic-designs/jesus/CDtwo 147 copy.jpg",
       "name": "CDtwo 147 copy.jpg",
       "src": "/website-sp/catholic-designs/jesus/CDtwo%20147%20copy.jpg"
+    },
+    {
+      "id": "catholic-designs/jesus/Catholic designs Jesus (140).jpeg",
+      "name": "Catholic designs Jesus (140).jpeg",
+      "src": "/website-sp/catholic-designs/jesus/Catholic%20designs%20Jesus%20(140).jpeg"
     }
   ],
   "mary": [
@@ -2088,6 +2098,11 @@
       "id": "catholic-designs/mary/Catholic Designs Mary (74).jpg",
       "name": "Catholic Designs Mary (74).jpg",
       "src": "/website-sp/catholic-designs/mary/Catholic%20Designs%20Mary%20(74).jpg"
+    },
+    {
+      "id": "catholic-designs/mary/Catholic Designs Mary (75).jpeg",
+      "name": "Catholic Designs Mary (75).jpeg",
+      "src": "/website-sp/catholic-designs/mary/Catholic%20Designs%20Mary%20(75).jpeg"
     }
   ],
   "saints": [
@@ -3444,6 +3459,21 @@
       "id": "catholic-designs/church/CDtwo 152 copy.jpg",
       "name": "CDtwo 152 copy.jpg",
       "src": "/website-sp/catholic-designs/church/CDtwo%20152%20copy.jpg"
+    },
+    {
+      "id": "catholic-designs/church/Catholic Designs Church  (56).jpeg",
+      "name": "Catholic Designs Church  (56).jpeg",
+      "src": "/website-sp/catholic-designs/church/Catholic%20Designs%20Church%20%20(56).jpeg"
+    },
+    {
+      "id": "catholic-designs/church/Catholic Designs Church  (57).jpeg",
+      "name": "Catholic Designs Church  (57).jpeg",
+      "src": "/website-sp/catholic-designs/church/Catholic%20Designs%20Church%20%20(57).jpeg"
+    },
+    {
+      "id": "catholic-designs/church/Catholic Designs Church  (58).jpeg",
+      "name": "Catholic Designs Church  (58).jpeg",
+      "src": "/website-sp/catholic-designs/church/Catholic%20Designs%20Church%20%20(58).jpeg"
     }
   ],
   "scripture": [
@@ -3716,6 +3746,16 @@
       "id": "catholic-designs/scripture/CDtwo 149 copy.jpg",
       "name": "CDtwo 149 copy.jpg",
       "src": "/website-sp/catholic-designs/scripture/CDtwo%20149%20copy.jpg"
+    },
+    {
+      "id": "catholic-designs/scripture/Catholic Designs Scripture (53).jpeg",
+      "name": "Catholic Designs Scripture (53).jpeg",
+      "src": "/website-sp/catholic-designs/scripture/Catholic%20Designs%20Scripture%20(53).jpeg"
+    },
+    {
+      "id": "catholic-designs/scripture/Catholic Designs Scripture (54).jpeg",
+      "name": "Catholic Designs Scripture (54).jpeg",
+      "src": "/website-sp/catholic-designs/scripture/Catholic%20Designs%20Scripture%20(54).jpeg"
     }
   ]
 }

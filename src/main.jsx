@@ -5,6 +5,9 @@ import './index.css'
 import GAListener from './components/GAListener.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
+import { installNavigationGuard } from './utils/navigationGuard.js'
+
+installNavigationGuard()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
